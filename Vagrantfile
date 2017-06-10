@@ -18,7 +18,7 @@ Vagrant.configure("2") do |config|
       provisioner.sync_hosts = true
       provisioner.add_host '10.20.1.3' ,['pupper', 'master']
     end
-    server.vm.provider "vistualbox" do |vb| 
+    server.vm.provider "virtualbox" do |vb| 
   	  vb.memory = 4096
   	  vb.cpus = 2
   	  vb.linked_clone = true
@@ -39,7 +39,7 @@ SERVER_PROVISION
       provisioner.sync_hosts = true
       provisioner.add_host '10.20.1.3' ,['pupper', 'master']
     end  
-    agent.vm.provider "vistualbox" do |vb| 
+    agent.vm.provider "virtualbox" do |vb| 
   	  vb.memory = 512
   	  vb.linked_clone = true
     end

@@ -16,7 +16,7 @@ Vagrant.configure("2") do |config|
   	server.vm.provision :hosts do |provisioner|
       provisioner.autoconfigure = true
       provisioner.sync_hosts = true
-      provisioner.add_host '10.20.1.3' ,['pupper', 'master']
+      provisioner.add_host '10.20.1.3' ,['puppet', 'master']
     end
     server.vm.provider "virtualbox" do |vb| 
   	  vb.memory = 4096
@@ -37,7 +37,7 @@ SERVER_PROVISION
     agent.vm.provision :hosts do |provisioner|
       provisioner.autoconfigure = true
       provisioner.sync_hosts = true
-      provisioner.add_host '10.20.1.3' ,['pupper', 'master']
+      provisioner.add_host '10.20.1.3' ,['puppet', 'master']
     end  
     agent.vm.provider "virtualbox" do |vb| 
   	  vb.memory = 512

@@ -27,6 +27,7 @@ Vagrant.configure("2") do |config|
       locale-gen pl_PL.UTF-8
 	  apt-get install -y  tmux mc vim  bash-completion man locate
       apt-get install -y puppetserver
+      service puppetserver start
 SERVER_PROVISION
   end
 
@@ -46,6 +47,7 @@ SERVER_PROVISION
     agent.vm.provision "shell", inline: <<AGENT_PROVISION
       locale-gen pl_PL.UTF-8
 	  apt-get install -y  tmux mc vim  bash-completion man locate
+	  puppet agent -t
 AGENT_PROVISION
   end
 end
